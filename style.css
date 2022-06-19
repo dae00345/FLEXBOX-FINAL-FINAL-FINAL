@@ -45,7 +45,7 @@
     --img-width:200px;
 
     --all-container-height:100vh;
-    --all-container-mobile-height:100vh;
+    --all-container-mobile-height:auto;
     --all-container-margin-top-mobile:50px;
     /*Penutup Desktop */
     /* Penutup Width & Height */
@@ -314,22 +314,12 @@ nav a:active{
  .contact-img{
     width: 200px;
     height:200px;
-    animation: contactanimation 0.4s infinite;
  }
  .sosmed-img:hover{
     transform:scale(1.2);
     transition: all 0.6s;
  }
- /* Contact img animation */
- @keyframes contactanimation{
-    0%{
 
-    }
-    100%{
-        transform:scale(1.1);
-    }
- }
- /* Penutup Contact img animation */
  .contact-img:active, .sosmed-img:active{
     filter: grayscale(100%);
  }
@@ -411,7 +401,7 @@ nav a:active{
 }
 /* Penutup Tablet  */
 
-/* Mobile */
+/* Mobile Pixel 1*/
 @media(max-width:576px){
     /* navbar */
     nav{
@@ -438,7 +428,7 @@ nav a:active{
     /* penutup navbar */
     /* article */
     .article{
-        margin-top: 79px;
+        margin-top: 100px;
         width:100%;
     }
     /* penututp article */
@@ -448,23 +438,27 @@ nav a:active{
         display: flex;
         height:auto;
         width:95%;
+        color: var(--p-text-color);
     }
     .profile-container{
         height:var(--all-container-mobile-height);
+        background-image: none;
     }
     /* penutup profile */
 
     /* Hobi  */
     .hobi-container{
-        height:115vh;
         justify-content:center;
         width:100%;
+        height:var(--all-container-mobile-height);
     }
     .hobi-wrapper{
         flex-flow:column nowrap;
         width:100%;
         padding: 30px;
         justify-content:space-around;
+        min-height:200vh;
+        max-height: 300vh;
     }
     .hobi{
         width:100%;
@@ -479,10 +473,31 @@ nav a:active{
         width:140px;
         height: 140px;
     }
+    .gallery-wrapper{
+        height:var(--all-container-mobile-height);
+    }
     /* penututp gallery */
+    .contact-container{
+        height:var(--all-container-height));
+    }
+}
+/* Mobile Iphone X */
+
+@media(max-width:370px){
+    .hobi-wrapper{
+        height:300vh;
+    }
+    .vector-img{
+        width:120px;
+        height:120px;
+    }
+    .sosmed-wrapper{
+        width:80%;
+    }
+
 }
 /* Pentutup Mobile */
- /* ----------PENUTUP RESPONSIVE BREAKPOIN----------T */
+ /* ----------PENUTUP RESPONSIVE BREAKPOINT----------T */
  
  /* SCROOLBAR CUSTOMIZE */
  ::-webkit-scrollbar{
