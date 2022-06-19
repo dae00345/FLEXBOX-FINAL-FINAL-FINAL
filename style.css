@@ -1,0 +1,495 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: solid red 1px; */
+}
+/* CSS VARIABLE */
+:root{
+    /* Color */
+    --body-color:rgb(59, 57, 67);
+    --h2-text-color:rgb(143, 125, 215);
+    --p-text-color:rgb(151, 146, 170) ;
+
+    --header-bg-color:rgb(26, 33, 48);
+    --header-text-color:rgb(143, 125, 215);
+
+    --logo-bg-color:rgb(96, 116, 160);
+    --logo-text-color:white;
+
+    --footer-bg-color:rgb(26, 33, 48);
+    --footer-text-color:rgb(143, 125, 215);
+    
+    --profile-img-bg-color:rgb(74, 65, 111);
+    --profile-text-color:white;
+
+    --hobi-container-bg-color:none;
+    --hobi-bg-color:rgb(26, 33, 48);
+    --hobi-text-color:rgb(143, 125, 215);
+
+    --contact-container-bg-color:none;
+
+    --scroolbar-thumb-bg-color:rgb(96, 116, 160);
+    --scroolbar-track-bg-color:rgb(26, 33, 48);
+    /* Penutup Color */
+
+    /* Mobile Color */
+    --slide-bg-color:rgb(26, 33, 48);
+    --menu-toggle-span-bg-color:rgb(96, 116, 160);
+    /* Penutup Mobile Color */
+
+    /* Width & Height */
+    /* Desktop */
+    --nav-width:40%;
+    --img-height:200px;
+    --img-width:200px;
+
+    --all-container-height:100vh;
+    --all-container-mobile-height:100vh;
+    --all-container-margin-top-mobile:50px;
+    /*Penutup Desktop */
+    /* Penutup Width & Height */
+}
+
+/* PENUTUP CSS VARIABLE */
+body{
+    background-color:var(--body-color);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--p-text-color);
+}
+/* FONT */
+.center-text{
+    text-align: center;
+    color: var(--h2-text-color);
+}
+/* PENUTUP FONT */
+/*  - ------HEADER - ------ */
+.header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: var(--header-bg-color);
+
+}
+/*  Navbar */
+nav{
+    width:var(--nav-width);
+}
+nav ul{
+    display:flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+nav a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--header-text-color);
+    text-transform: uppercase;
+}
+nav a:hover{
+    color: white;
+}
+nav a:active{
+    color: var(--header-text-color);
+}
+/* Penutup Navbar */
+
+/* Logo */
+.logo{
+    padding: 10px;
+    background-color: var(--logo-bg-color);
+    color: var(--logo-text-color);
+    font-weight: bold;
+    border-radius: 20px 0 20px 0;
+    cursor: pointer;
+    animation: logoanimation 1s infinite;
+}
+.logo abbr{
+    text-decoration: none;
+}
+
+/* logo animation */
+@keyframes logoanimation{
+    0%{
+        background-color: #fff; 
+    }
+    30%{
+        background-color: rgb(26, 33, 48);
+        
+    }
+    50%{
+        background-color: rgb(52, 66, 96);
+        
+    }
+    70%{
+        background-color: rgb(75, 97, 144);
+        
+    }
+    100%{
+        background-color: var(--logo-bg-color);
+        transform: rotate(360deg);
+    }
+}
+/* penutup logo animation */
+/* Penutup Logo */
+
+/* hamburger menu */
+.menu-toggle{
+    display:none;
+    flex-direction: column;
+    height:20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width:40px;
+    height:28px;
+    left: -5px;
+    top:-3px;
+    opacity: 0;
+    cursor :pointer;
+
+    z-index: 4;
+
+}
+.menu-toggle span{
+    display:block;
+    width:28px;
+    height:3px;
+    background-color:var(--menu-toggle-span-bg-color);
+    transition: all 0.4s;
+    z-index: 3;
+}
+/* penutup hamburger menu*/
+
+/* hamburger menu animation */
+.menu-toggle span:nth-child(2){
+    transform-origin:0 0;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: #fff;
+    transform:rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle span:nth-child(4){
+    transform-origin:0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: #fff;
+    transform:rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity:0;
+    transform:scale(0);
+}
+/* penutup hamburger menu animation */
+
+
+/*  - ------PENUTUP HEADER - ------ */
+
+ /* - ------ARTICLE - ------ */
+ .article{
+    width:100%;
+ }
+ /* profile */
+.profile-container{
+    height: var(--all-container-height);
+    margin: auto;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--all-container-margin-top-mobile);
+    background-image: url(aset/body.png);
+    background-size: cover;
+    position: center;
+    width:100%;
+    row-gap: 10px;
+}
+.profile-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width:75%;
+    text-align: center;
+    color: var(--profile-text-color);
+    row-gap: 10px;
+}
+.profile-img{
+    width:200px;
+    height:200px;
+    background-color:var(--profile-img-bg-color);
+    border-radius: 20px 0 20px 0;
+    border: white 3px solid;
+}
+ /* penutup profile*/
+
+ /* hobi */
+ .hobi-container{
+    height:var(--all-container-height);
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    background-color:var(--hobi-container-bg-color);
+    margin-top:var(--all-container-margin-top-mobile);
+ }
+ .hobi-wrapper{
+    display:flex;
+    flex-flow: row wrap;
+    width:90%;
+    align-items: center;
+    justify-content:space-between;
+    height:60vh;
+ }
+ .hobi{
+    background-color:var(--hobi-bg-color);
+    width:30%;
+    padding: 20px;
+    text-align:center;
+    border-radius:10px 0 10px 0;
+    color: var(--hobi-text-color);
+ }
+ .hobi:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: all 0.5s;
+
+ }
+ /* penutup hobi */
+ /* gallery */
+ .gallery-container{
+    height:var(--all-container-height);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: var(--all-container-margin-top-mobile);
+ }
+ .gallery-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+
+ }
+ .vector-img{
+    width:var(--img-height);
+    height:var(--img-width);
+    border-radius: 10px 0 10px 0;
+ }
+ .vector-img:hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+    cursor: pointer;
+ }
+ /* penutup gallery */
+ /* Contact */
+ .contact-container{
+    display:flex;
+    flex-flow: column nowrap;
+    height:var(--all-container-height);
+    justify-content: center;
+    align-items: center;
+    background-color:var(--contact-container-bg-color);
+    margin-top:var(--all-container-margin-top-mobile);
+ }
+ .contact-wrapper{
+    min-height: 50vh;
+    width:75%;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+ }
+ .contact-img{
+    width: 200px;
+    height:200px;
+    animation: contactanimation 0.4s infinite;
+ }
+ .sosmed-img:hover{
+    transform:scale(1.2);
+    transition: all 0.6s;
+ }
+ /* Contact img animation */
+ @keyframes contactanimation{
+    0%{
+
+    }
+    100%{
+        transform:scale(1.1);
+    }
+ }
+ /* Penutup Contact img animation */
+ .contact-img:active, .sosmed-img:active{
+    filter: grayscale(100%);
+ }
+ .sosmed-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width:50%;
+ }
+ .sosmed-img{
+    border-radius: 5px 0 5px 0;
+    width:40px;
+    height:40px;
+ }
+ /* Penutup Contact */
+ /*  - ------PENUTUP ARTICLE - ------ */
+
+ /*  - ------FOOTER - ------ */
+ .footer{
+    background-color:var(--footer-bg-color);
+    display:flex;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+    padding: 20px 30px;
+    color: var(--footer-text-color);
+ }
+ .footer h3{
+    margin:auto;
+ }
+ /*  - ------PENUTUP FOOTER - ------ */
+
+ /* RESPONSIVE BREAKPOINT */
+ /* Nest Hub */
+ /* Penutup Nest Hub */
+ @media(max-width:1024px){
+     .gallery-container{
+        height:auto;
+     }
+     .hobi-wrapper{
+        height:90vh;
+     }
+     .profile-wrapper{
+        height:50vh;
+     }
+
+ }
+
+/* Tablet  */
+@media(max-width:720px){
+    /* nav */
+    nav{
+        width:50%;
+    }
+    .slide{
+        transform:translateX(0);
+        opacity:1;
+    }
+    /* penutup nav */
+    /* hobi */
+    .hobi-container{
+        height:auto;
+    }
+    .hobi-wrapper{
+        flex-flow:column nowrap;
+        height:110vh;
+    }
+    .hobi{
+        width:80%;
+    }
+    /* penutup hobi */
+    /* gallery */
+    .gallery-container{
+        height:auto;
+    }
+    .profile-wrapper{
+        height:auto;
+    }
+    /* penutup gallery */
+}
+/* Penutup Tablet  */
+
+/* Mobile */
+@media(max-width:576px){
+    /* navbar */
+    nav{
+        width:80%;
+    }
+    nav ul{
+        background-color: var(--slide-bg-color);
+        position:absolute;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        height:100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 1;
+        width:40%;
+        transform:translateX(100%);
+        transition: all 1s;
+        opacity:0;
+    }
+    .menu-toggle{
+        display: flex;
+    }
+    /* penutup navbar */
+    /* article */
+    .article{
+        margin-top: 79px;
+        width:100%;
+    }
+    /* penututp article */
+
+    /* profile */
+    .profile-wrapper{
+        display: flex;
+        height:auto;
+        width:95%;
+    }
+    .profile-container{
+        height:var(--all-container-mobile-height);
+    }
+    /* penutup profile */
+
+    /* Hobi  */
+    .hobi-container{
+        height:115vh;
+        justify-content:center;
+        width:100%;
+    }
+    .hobi-wrapper{
+        flex-flow:column nowrap;
+        width:100%;
+        padding: 30px;
+        justify-content:space-around;
+    }
+    .hobi{
+        width:100%;
+    }
+    /* Penutup Hobi  */
+
+    /* gallery */
+    .gallery-container{
+        height:var(--all-container-mobile-height);
+    }
+    .vector-img{
+        width:140px;
+        height: 140px;
+    }
+    /* penututp gallery */
+}
+/* Pentutup Mobile */
+ /* ----------PENUTUP RESPONSIVE BREAKPOIN----------T */
+ 
+ /* SCROOLBAR CUSTOMIZE */
+ ::-webkit-scrollbar{
+    background-color: var(--scroolbar-track-bg-color);
+ }
+ ::-webkit-scrollbar-thumb{
+    background-color:var(--scroolbar-thumb-bg-color);
+    border-radius: 5px;
+ }
+ /* PENUTUP SCROOLBAR CUSTOMIZE */
