@@ -278,7 +278,7 @@ nav a:active{
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    width: 90%;
+    width: 75%;
 
  }
  .vector-img{
@@ -364,6 +364,9 @@ nav a:active{
      .profile-wrapper{
         height:50vh;
      }
+     .gallery-wrapper{
+        width:90%;
+     }
 
  }
 
@@ -394,8 +397,12 @@ nav a:active{
     .gallery-container{
         height:auto;
     }
-    .profile-wrapper{
+    .profile-container{
         height:auto;
+    }
+    .profile-wrapper{
+        height:115vh;
+        justify-content:center;
     }
     /* penutup gallery */
 }
@@ -428,7 +435,7 @@ nav a:active{
     /* penutup navbar */
     /* article */
     .article{
-        margin-top: 100px;
+        padding-top: 100px;
         width:100%;
     }
     /* penututp article */
@@ -482,7 +489,6 @@ nav a:active{
     }
 }
 /* Mobile Iphone X */
-
 @media(max-width:370px){
     .hobi-wrapper{
         height:300vh;
